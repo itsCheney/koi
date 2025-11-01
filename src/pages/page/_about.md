@@ -1,19 +1,45 @@
-Koi (こい, 恋) 是由 [tcdw](https://www.tcdw.net) 为他不存在的女儿制作的 [Astro](https://astro.build/) 静态博客模板。
+<!-- ```shell
+$ whoami
+ 
+>  这是一个好问题...
+>
+>  在这个服务器上, 我是 'admin' 和 'author'.
+>  在现实世界中, 我是 [你的名字或昵称].
+>
+>  我是一名 [你的角色, 例如: "软件开发者", "学生", "设计师"]
+>  热衷于 [你的兴趣1, 例如: "构建Web应用"] 和 [你的兴趣2, 例如: "探索新技术"].
+>
+>  这个网站是我的 [网站定位, 例如: "数字花园", "个人博客", "作品集"].
+>  我在这里分享我的思考、项目以及我学到的东西。
+>
+>  你也可以在这些地方找到我:
+>  GitHub:   @your-github-handle
+>  LinkedIn: /in/your-linkedin-profile
+>  Bilibili: @your-bilibili-id
+>
+>  感谢你的访问。
+``` -->
+<pre style="background-color: #24292e; color: #e0e0e0; padding: 16px; border-radius: 8px; line-height: 1.6;">
+<span><span style="color: #888;">/$</span> <span style="color: #ffffff; font-weight: bold;">whoami</span></span>
 
-## 特性
+<span style="color: #569cd6;">&gt;</span>  这是一个好问题...
+<span style="color: #569cd6;">&gt;</span>
+<span style="color: #569cd6;">&gt;</span>  在这个服务器上, 我是 <span style="color: #a5d6ff;">'admin'</span>.
+<span style="color: #569cd6;">&gt;</span>  在现实世界中, 我是 <span style="color: #f0c674;">[你的名字或昵称]</span>.
+<span style="color: #569cd6;">&gt;</span>
+<span style="color: #569cd6;">&gt;</span>  我是一名 <span style="color: #f0c674;">[你的角色, 例如: "软件开发者", "学生", "设计师"]</span>
+<span style="color: #569cd6;">&gt;</span>  热衷于 <span style="color: #f0c674;">[你的兴趣1, 例如: "构建Web应用"]</span> 和 <span style="color: #f0c674;">[你的兴趣2, 例如: "探索新技术"]</span>.
+<span style="color: #569cd6;">&gt;</span>
+<span style="color: #569cd6;">&gt;</span>  我在这里分享我的思考、项目以及我学到的东西。
+<span style="color: #569cd6;">&gt;</span>
+<span style="color: #569cd6;">&gt;</span>  你也以在这些地方找到我:
+<span style="color: #569cd6;">&gt;</span>  GitHub: <a href="https://github.com/itsCheney" target="_blank" style="color: #a5d6ff; text-decoration: none;">https://github.com/itsCheney</a>
+<span style="color: #569cd6;">&gt;</span>
+<span style="color: #569cd6;">&gt;</span> <span style="color:rgb(255, 255, 255);"> 感谢你的访问</span>
+<!-- <span style="color: #f0c674;">-rw-r--r--</span> <span style="color: #b5cea8;">1</span> <span style="color: #569cd6;">user</span> <a href="https://google.com" target="_blank" style="color: #a5d6ff; text-decoration: none;">Google.com</a>
+<span style="color: #f0c674;">-rw-r--r--</span> <span style="color: #b5cea8;">1</span> <span style="color: #569cd6;">user</span> <a href="https://github.com" target="_blank" style="color: #a5d6ff; text-decoration: none;">GitHub-Profile</a>
+<span style="color: #f0c674;">-rw-r--r--</span> <span style="color: #b5cea8;">1</span> <span style="color: #569cd6;">user</span> <a href="/about" target="_blank" style="color: #a5d6ff; text-decoration: none;">About_Me.md</a>
+我在这里分享我的思考、项目以及我学到的东西。 -->
+</pre>
 
-- 全站响应式，支持各种设备的浏览需求
-- 明亮/暗黑双主题，跟随用户操作系统设置应用
-- SEO 友好
-- 性能好：前端部分仅需少量 JavaScript
-- 可访问性好：样式设计基本符合 WCAG 规范[^1]，键盘/读屏软件友好
-- 好康！！！
-
-[^1]: 需要搭配恰当的横幅图片，才能使得头部的标题和副标题文字对比度符合 WCAG 颜色标准。
-
-## 技术栈
-
-- [Astro](https://astro.build/) - 通用的内容性网站框架
-- [Tailwind CSS](https://tailwindcss.com/) - 原子化的 CSS 框架
-- [Svelte](https://svelte.dev/) - 为网站增加互动元素的轻量级 UI 库
-- [TypeScript](https://www.typescriptlang.org/) - <abbr title="从佐玩官网看到的一句话描述。我觉得这个很妙，抄过来了（">八块腹肌</abbr>的 JavaScript
+<small>Powered by Koi and Astro</small>

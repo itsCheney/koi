@@ -23,6 +23,8 @@
     "astro": "^5.13.7",
     "markdown-to-text": "^0.1.1",
     "prettier": "^3.6.2",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
     "sharp": "^0.33.5",
     "svelte": "^5.38.10",
     "tailwind-merge": "^3.3.1",

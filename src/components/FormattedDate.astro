@@ -8,9 +8,6 @@ const {date, class: className = ""} = Astro.props;
 ---
 
 <time datetime={date.toISOString()} class={className}>{
-    date.toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-    })
+    // 使用 .toISOString().slice(0, 10) 来获取 YYYY-MM-DD 格式
+    date.toISOString().slice(0, 10)
 }</time>

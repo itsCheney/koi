@@ -1,0 +1,32 @@
+---
+// src/components/TableOfContents.astro
+import type { MarkdownHeading } from 'astro';
+
+export interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+// 过滤掉 h1 (depth: 1)，因为文章标题通常就是 h1
+// 你也可以根据需要调整，比如保留 h1：const filteredHeadings = headings;
+const filteredHeadings = headings.filter(h => h.depth > 1);
+---
+
+{filteredHeadings.length > 0 && (
+  <nav class="toc p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mb-6" aria-label="Table of contents">
+    <h3 class="text-lg font-bold mb-2">目录</h3>
+    <ul class="list-none pl-0">
+      {filteredHeadings.map((heading) => (
+        <li style={{ marginLeft: `${(heading.depth - 2) * 1}rem` }} class="mb-1">
+          <a
+            class="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+            href={`#${heading.slug}`}
+          >
+            {heading.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
