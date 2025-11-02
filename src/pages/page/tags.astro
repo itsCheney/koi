@@ -1,6 +1,6 @@
 ---
-import Layout from "../../../layouts/BlogPage.astro";
-import { filterPosts } from "../../../utils/misc";
+import Layout from "../../layouts/BlogPage.astro";
+import { filterPosts } from "../../utils/misc";
 import { getCollection } from "astro:content";
 
 const posts = filterPosts(await getCollection("blog"), {

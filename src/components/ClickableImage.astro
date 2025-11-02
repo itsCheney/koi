@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+    id?: string;
+    src: ImageMetadata | string | Promise<{ default: ImageMetadata }>;
+    href?: string;
+    target?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+    inferSize?: boolean;
+    "un-lg"?: string;
+}
+
+let {id, src, href, target = "_blank", alt = "", width, height, inferSize = false, "un-lg": unlg } = Astro.props;
+
+if (href == null) {
+    if (typeof src === "string") {
+        href = src;
+    } else if (src instanceof Promise) {
+        src.then((data) => {
+            href = data.default.src;
+        });
+    } else {
+        href = src.src;
+    }
+}
+
+typeof src === "string" && width == null && height == null ? inferSize = true : "";
+--- 
+
+<a id={id} href={href} target={target} >
+    {
+        typeof src === "string" ? (
+            inferSize ? (
+                <Image un-lg={unlg} src={src} alt={alt} inferSize={true}/>
+            ) : (
+                <Image un-lg={unlg} src={src} alt={alt} width={width ?? 0} height={height ?? 0} />
+            )
+        ) : (
+            <Image un-lg={unlg} src={src} alt={alt} width={width} height={height}/>
+        )
+    }
+</a>

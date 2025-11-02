@@ -1,5 +1,4 @@
 ---
-
 title: "First Pub"
 pubDate: "2025-11-01" # 推荐使用 YYYY-MM-DD
 
@@ -11,7 +10,7 @@ updatedDate: "2025-11-02" # 仅在文章更新时填写
 # (否) 文章的主题图片 (通常是 /public 目录下的路径)
 heroImage: "/images/blog/post-hero.jpg"
 # (否) 是否为草稿 (设置为 true 则不会被构建到生产环境)
-draft: false
+draft: true
 # (否) 是否在列表中隐藏 (文章仍可通过直接链接访问)
 unlisted: false
 
@@ -23,11 +22,11 @@ tags:
 ---
 
 ## First Post of the Blog
-abcd
+
 ### Second Level Heading
-srgfs
+
 #### Third Level Heading
-gzsdrg
+
 
 
 在这里开始撰写你的博文内容...
