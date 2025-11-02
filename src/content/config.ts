@@ -24,6 +24,9 @@ const blog = defineCollection({
 
 		// 文章在博文列表和 RSS 不可见，但可以通过链接访问
 		unlisted: z.boolean().optional(),
+
+		// 文章标签
+		tags: z.array(z.string()).optional(),
 	}),
 });
 
