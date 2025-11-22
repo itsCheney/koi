@@ -11,7 +11,7 @@ export default defineConfig({
 
   // 如果你的网站在子路径下（例如 `https://example.com/koi/`），则填写 `/koi/`
   // 在根路径下（例如 `https://example.com/`）则填写 `/`
-  base: process.env.NODE_ENV === "production" ? "/koi/" : "",
+  base: process.env.NODE_ENV === "production" ? "/" : "",
 
   integrations: [mdx(), sitemap(), svelte()],
 
