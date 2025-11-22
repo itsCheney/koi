@@ -32,7 +32,7 @@ $ whoami
 <span style="color: #569cd6;">&gt;</span>
 <span style="color: #569cd6;">&gt;</span>  你也以在这些地方找到我:
 <span style="color: #569cd6;">&gt;</span>  GitHub: <a href="https://github.com/itsCheney" target="_blank" style="color: #a5d6ff; text-decoration: none;">https://github.com/itsCheney</a>
-<span style="color: #569cd6;">&gt;</span>  Twitter: <a href="https://github.com/itsCheney" target="_blank" style="color: #a5d6ff; text-decoration: none;">https://twitter.com/Cheney_233</a>
+<span style="color: #569cd6;">&gt;</span>  Twitter: <a href="https://twitter.com/Mashiro_233" target="_blank" style="color: #a5d6ff; text-decoration: none;">https://twitter.com/Mashiro_233</a>
 <span style="color: #569cd6;">&gt;</span>
 <span style="color: #569cd6;">&gt;</span> <span style="color:rgb(255, 255, 255);"> 感谢你的访问</span>
 <!-- <span style="color: #f0c674;">-rw-r--r--</span> <span style="color: #b5cea8;">1</span> <span style="color: #569cd6;">user</span> <a href="https://google.com" target="_blank" style="color: #a5d6ff; text-decoration: none;">Google.com</a>

@@ -18,13 +18,21 @@ posts.forEach(post => {
         }
     });
 });
+
+// 按文章数量降序排序
+const sortedTags = allTags.sort((a, b) => (tagCounts.get(b) || 0) - (tagCounts.get(a) || 0));
 const totalPostCount = posts.length;
 ---
 
 <Layout
-    title="分类"
-    description="按标签筛选文章"
+    title="标签 - 文章分类"
+    description="按标签浏览所有文章,共 {allTags.length} 个标签"
 >
+    <div class="mb-6">
+        <div class="text-lg text-zinc-600 dark:text-zinc-300">
+            共 <span class="font-semibold text-zinc-800 dark:text-zinc-100">{sortedTags.length}</span> 个标签,<span class="font-semibold text-zinc-800 dark:text-zinc-100">{totalPostCount}</span> 篇文章。
+        </div>
+    </div>
     <div class="grid md:grid-cols-4 gap-6 mt-6">
         <aside class="md:col-span-1 p-4 rounded-lg">
             <h3 class="font-semibold text-lg">标签</h3>
@@ -32,7 +40,7 @@ const totalPostCount = posts.length;
                 <button class="tag-btn active px-3 py-1 rounded-full text-sm !bg-black/10 dark:!bg-white/10 text-zinc-900 dark:text-zinc-100 border border-transparent" data-tag="all">
                     全部 <span class="opacity-60">({totalPostCount})</span>
                 </button>
-                {allTags.map(tag => (
+                {sortedTags.map(tag => (
                     <button class="tag-btn px-3 py-1 rounded-full text-sm border border-black/10 dark:border-white/10 text-zinc-500 dark:text-zinc-400 hover:bg-black/5 dark:hover:bg-white/5" data-tag={tag}>
                         {tag} <span class="opacity-60">({tagCounts.get(tag) || 0})</span>
                     </button>
@@ -43,7 +51,7 @@ const totalPostCount = posts.length;
         <section class="md:col-span-3">
             <div class="flex flex-col gap-4" id="post-list">
                 {posts.map(post => (
-                    <a href={`/post/${post.slug}/`} class="post-item block p-4 rounded-lg bg-black/5 dark:bg-black/10 border border-black/10 dark:border-white/10 transition-colors hover:bg-black/10 dark:hover:bg-white/5" data-tags={post.data.tags?.join(' ')}>
+                    <a href={`/post/${post.slug}/`} class="post-item block p-4 rounded-lg bg-black/5 dark:bg-black/10 border border-black/10 dark:border-white/10 transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/5 hover:shadow-md hover:scale-[1.02]" data-tags={post.data.tags?.join(' ')}>
                         <h3 class="text-lg font-medium">{post.data.title}</h3>
                         <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1 line-clamp-2">{post.data.description}</p>
                         <div class="mt-2 text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-2">
@@ -65,12 +73,13 @@ const totalPostCount = posts.length;
     <script>
         const tagList = document.getElementById('tag-list');
         const postList = document.getElementById('post-list');
-        const postItems = Array.from(postList.querySelectorAll('.post-item')) as HTMLElement[];
-        const tagButtons = Array.from(tagList.querySelectorAll('.tag-btn')) as HTMLElement[];
+        const postItems = Array.from(postList?.querySelectorAll('.post-item') || []) as HTMLElement[];
+        const tagButtons = Array.from(tagList?.querySelectorAll('.tag-btn') || []) as HTMLElement[];
 
         let activeTag = 'all';
 
-        tagList.addEventListener('click', (e) => {
+        // 标签筛选
+        tagList?.addEventListener('click', (e) => {
             const target = e.target as HTMLElement;
             if (target.classList.contains('tag-btn')) {
                 const selectedTag = target.dataset.tag;
@@ -85,9 +94,6 @@ const totalPostCount = posts.length;
         function updateActiveButton() {
             tagButtons.forEach(button => {
                 const isActive = button.dataset.tag === activeTag;
-
-                // Base styles like `border` are now applied directly in the HTML.
-                // We only toggle the classes that change.
 
                 // Active state classes
                 button.classList.toggle('!bg-black/10', isActive);
